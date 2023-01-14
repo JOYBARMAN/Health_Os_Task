@@ -17,9 +17,19 @@ from django.contrib import admin
 from django.urls import path,include
 from customer_accounts_api.views import CustomerRegistrationView,CustomerLoginView
 from company_api.views import CompanyView
+from phonenumbers_api.views import PhoneNumberView
+from subscription_api.views import SubscriptionPlanView,CustomerSubscriptionView,CustomerAddSubscription,CustomerCancelSubView
+from payment_api.views import CustomerPaymentSubscription
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/reg/',CustomerRegistrationView.as_view()),
     path('api/login/',CustomerLoginView.as_view()),
     path('api/company/',CompanyView.as_view()),
+    path('api/phonenum/',PhoneNumberView.as_view()),
+    path('api/subplan/',SubscriptionPlanView.as_view()),
+    path('api/addsub/',CustomerAddSubscription.as_view()),
+    path('api/cussub/<int:uid>/',CustomerSubscriptionView.as_view()),
+    path('api/payment/<int:subid>/',CustomerPaymentSubscription.as_view()),
+    path('api/cancelsub/<int:subid>/',CustomerCancelSubView.as_view())
 ]
