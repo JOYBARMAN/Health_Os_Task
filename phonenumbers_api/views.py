@@ -16,4 +16,4 @@ class PhoneNumberView(APIView):
         serializer = PostPhoneNumberSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response({"msg":"Successfully add data"},status=status.HTTP_201_CREATED)
+        return Response({"msg":"Successfully add phone number"},status=status.HTTP_201_CREATED)

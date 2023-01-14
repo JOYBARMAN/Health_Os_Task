@@ -16,4 +16,4 @@ class CompanyView(APIView):
         serializer = CompanySerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response({"msg":"Successfully add data"},status=status.HTTP_201_CREATED)
+        return Response({"msg":"Successfully add data to company"},status=status.HTTP_201_CREATED)

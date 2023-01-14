@@ -4,7 +4,7 @@ from .models import SubscriptionPlan , Subscription
 class GetSubscriptionPlanSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubscriptionPlan
-        fields = ('name','company','fee','duration','description')
+        fields = ('id','name','company','fee','duration','description')
         depth = 1
 
 class PostSubscriptionPlanSerializer(serializers.ModelSerializer):
