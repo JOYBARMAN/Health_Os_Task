@@ -232,7 +232,20 @@
 			"name": "customer get the subscription plan",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/subplan/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"subplan",
+						""
+					]
+				}
 			},
 			"response": []
 		},
@@ -270,23 +283,74 @@
 			"name": "customer get their subscribe data",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/cussub/18/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cussub",
+						"18",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "customer payment for subscription",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"customer\":\"18\",\r\n\t\"amount\":\"2500\",\r\n\t\"method\":\"Stripe\",\r\n\t\"subscription\":\"6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/payment/6/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"payment",
+						"6",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "customer cancel their subscription",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/cancelsub/6/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cancelsub",
+						"6",
+						""
+					]
+				}
 			},
 			"response": []
 		}
